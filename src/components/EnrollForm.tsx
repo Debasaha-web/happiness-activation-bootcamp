@@ -5,49 +5,27 @@ import { useState } from "react";
 export default function EnrollForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
-    "idle"
-  );
+  const [status, setStatus] = useState<"idle" | "starting" | "error">("idle");
   const [message, setMessage] = useState("");
-  const [devLink, setDevLink] = useState<string | null>(null);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    setStatus("sending");
+    setStatus("starting");
     setMessage("");
-    setDevLink(null);
     try {
-      const res = await fetch("/api/auth/send-link", {
+      const res = await fetch("/api/auth/start", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email }),
       });
       const j = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(j.error || "Something went wrong.");
-      setStatus("sent");
-      setMessage(`Check ${email} for your link — it signs you in instantly.`);
-      if (j.devLink) setDevLink(j.devLink);
+      // Session cookie is set on the response; navigate into the bootcamp.
+      window.location.assign(j.redirect || "/me");
     } catch (err) {
       setStatus("error");
       setMessage(err instanceof Error ? err.message : "Something went wrong.");
     }
-  }
-
-  if (status === "sent") {
-    return (
-      <div className="card" style={{ marginTop: 20 }}>
-        <div className="notice ok">{message}</div>
-        {devLink && (
-          <a
-            href={devLink}
-            className="btn btn-lime btn-block"
-            style={{ marginTop: 14 }}
-          >
-            Dev: open my link →
-          </a>
-        )}
-      </div>
-    );
   }
 
   return (
@@ -80,9 +58,9 @@ export default function EnrollForm() {
       <button
         className="btn btn-lime btn-block"
         style={{ marginTop: 16 }}
-        disabled={status === "sending"}
+        disabled={status === "starting"}
       >
-        {status === "sending" ? "Sending…" : "Send my magic link →"}
+        {status === "starting" ? "Starting…" : "Start training →"}
       </button>
       <p
         style={{
@@ -92,7 +70,8 @@ export default function EnrollForm() {
           marginTop: 12,
         }}
       >
-        No password. We email you a one-tap link.
+        No password. Your name and email start your account — and let you pick up
+        right where you left off.
       </p>
     </form>
   );
