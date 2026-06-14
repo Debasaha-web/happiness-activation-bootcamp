@@ -28,28 +28,33 @@ and **emailing** the report (it displays in-app; email is optional — see botto
 
 ---
 
-## 🔑 What you need from Eric first
+## 🔑 Access — you already have it
 
-1. **Vercel access** — Eric invites you to the **AEA Team** (vercel.com → AEA Team →
-   Settings → Members → Invite). This lets you pull env vars and deploy.
-2. **The code** — see "Getting the code" below.
-
-That's it. You do **not** need the raw API keys — you'll pull them from Vercel.
+You're already a collaborator on **Vercel (AEA Team)**, **Supabase**, and **GitHub**,
+so nothing to request. You do **not** need the raw API keys — pull them from Vercel
+with `vercel env pull` (see Local setup).
 
 ---
 
 ## Getting the code
 
-There's no GitHub repo yet (it's a local git repo on Eric's Mac). Pick one:
+There's no GitHub repo yet — it's a local git repo on Eric's Mac at
+`~/Desktop/activate-happiness` (already committed, clean history). **You're set up to
+do the GitHub step:**
 
-- **A — GitHub (best):** Eric creates a repo under the AEA org and pushes, then adds
-  you as a collaborator. You `git clone` it. (Bonus: connect it in Vercel for
-  push-to-deploy so you don't need the CLI.)
-- **B — Zip:** Eric zips `~/Desktop/activate-happiness` **excluding** `node_modules`,
-  `.next`, and `.vercel`, and sends it. You unzip and run `npm install`.
+1. Eric gives you the folder (zip excluding `node_modules`/`.next`/`.vercel`, AirDrop,
+   or he pushes once and you take it from there).
+2. Create a repo under the AEA org and push:
+   ```bash
+   cd activate-happiness
+   git remote add origin git@github.com:YOUR-ORG/activate-happiness.git
+   git push -u origin main
+   ```
+3. **Recommended:** in Vercel → `activate-happiness` → Settings → Git, connect the
+   repo. Then every `git push` auto-deploys — no CLI needed.
 
-> `.env.local` is gitignored and won't be in either — that's intentional. You'll
-> regenerate it with `vercel env pull` (next section).
+> `.env.local` is gitignored and won't be in the repo — intentional. Regenerate it
+> with `vercel env pull` (next section).
 
 ---
 
