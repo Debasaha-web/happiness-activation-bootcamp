@@ -90,7 +90,7 @@ export const DAYS: Day[] = [
     display: { head: "Grati", glow: "tude" },
     tagline:
       "The mindset that rewires what your brain looks for. Train it for the next 20 minutes.",
-    video: { length: "2:10" },
+    video: { length: "2:10", url: "https://dgynmkwftbrla2it.public.blob.vercel-storage.com/day-1-gratitude.mp4" },
     scenario: {
       label: "Live the moment",
       paragraphs: [
@@ -258,7 +258,7 @@ export const DAYS: Day[] = [
     mindset: "Aspiration",
     display: { head: "Aspir", glow: "ation" },
     tagline: 'The mindset that refuses to let "good enough" be the ceiling.',
-    video: { length: "2:10" },
+    video: { length: "2:10", url: "https://dgynmkwftbrla2it.public.blob.vercel-storage.com/day-2-aspiration.mp4" },
     scenario: {
       label: "Live the moment",
       paragraphs: [
@@ -428,7 +428,7 @@ export const DAYS: Day[] = [
     display: { head: "Miss", glow: "ion" },
     tagline:
       "The mindset that turns a wish into a thing you actually do, on purpose, daily.",
-    video: { length: "2:10" },
+    video: { length: "2:10", url: "https://dgynmkwftbrla2it.public.blob.vercel-storage.com/day-3-mission.mp4" },
     scenario: {
       label: "Live the moment",
       paragraphs: [
@@ -604,7 +604,7 @@ export const DAYS: Day[] = [
     display: { head: "Ho", glow: "pe" },
     tagline:
       "The mindset that bets on a future worth showing up for — and trains the brain to find it.",
-    video: { length: "2:10" },
+    video: { length: "2:10", url: "https://dgynmkwftbrla2it.public.blob.vercel-storage.com/day-4-hope.mp4" },
     scenario: {
       label: "Live the moment",
       paragraphs: [
@@ -780,7 +780,7 @@ export const DAYS: Day[] = [
     display: { head: "Resili", glow: "ence" },
     tagline:
       "The mindset that doesn't avoid the hit — it gets up faster every time.",
-    video: { length: "2:10" },
+    video: { length: "2:10", url: "https://dgynmkwftbrla2it.public.blob.vercel-storage.com/day-5-resilience.mp4" },
     scenario: {
       label: "Live the moment",
       paragraphs: [
@@ -953,7 +953,7 @@ export const DAYS: Day[] = [
     display: { head: "Perspec", glow: "tive" },
     tagline:
       "The mindset that zooms out — so the thing that feels enormous goes back to its actual size.",
-    video: { length: "2:10" },
+    video: { length: "2:10", url: "https://dgynmkwftbrla2it.public.blob.vercel-storage.com/day-6-perspective.mp4" },
     scenario: {
       label: "Live the moment",
       paragraphs: [
@@ -1124,7 +1124,7 @@ export const DAYS: Day[] = [
     display: { head: "Pur", glow: "pose" },
     tagline:
       "The mindset that ties it all together — the reason underneath everything you just trained.",
-    video: { length: "2:10" },
+    video: { length: "2:10", url: "https://dgynmkwftbrla2it.public.blob.vercel-storage.com/day-7-purpose.mp4" },
     scenario: {
       label: "Live the moment",
       paragraphs: [
