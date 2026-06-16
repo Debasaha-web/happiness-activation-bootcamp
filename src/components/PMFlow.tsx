@@ -6,6 +6,7 @@ import type { Day } from "@/content/days";
 import type { AnswerPayload } from "@/lib/types";
 import TopBar from "./TopBar";
 import Video from "./Video";
+import Scenario from "./Scenario";
 import NeuroJournaling from "./NeuroJournaling";
 import MindsetBursting from "./MindsetBursting";
 import BeltMedallion from "./BeltMedallion";
@@ -186,13 +187,28 @@ export default function PMFlow({ day }: { day: Day }) {
         <div className="block">
           <div className="block-head">
             <div className="stepno">6</div>
-            <h2>Replay the Hype</h2>
+            <h2>Replay the Original Video</h2>
             <div className="tag">Watch again</div>
           </div>
           <Video
             label={`${day.mindset} · Replay`}
             length={day.video.length}
             url={day.video.url}
+          />
+        </div>
+
+        {/* 6b — Re-read this morning's scenario */}
+        <div className="block">
+          <div className="block-head">
+            <div className="stepno">6b</div>
+            <h2>Re-read This Morning&apos;s Scenario</h2>
+            <div className="tag">Read again</div>
+          </div>
+          <Scenario
+            label={day.scenario.label}
+            paragraphs={day.scenario.paragraphs}
+            continued={true}
+            onContinue={() => {}}
           />
         </div>
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import type { Day } from "@/content/days";
 import type { AnswerPayload } from "@/lib/types";
 import TopBar from "./TopBar";
@@ -12,8 +11,6 @@ import RAS from "./RAS";
 import VerbalEncoding from "./VerbalEncoding";
 
 export default function AMFlow({ day }: { day: Day }) {
-  const router = useRouter();
-
   // Progressive reveal: 0 = scenario only → 1 tagging → 2 ras → 3 verbal.
   const [stage, setStage] = useState(0);
   const [tagValues, setTagValues] = useState<Record<string, string>>({});
@@ -22,6 +19,7 @@ export default function AMFlow({ day }: { day: Day }) {
   const [recorded, setRecorded] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [done, setDone] = useState(false);
 
   const taggingRef = useRef<HTMLDivElement | null>(null);
   const rasRef = useRef<HTMLDivElement | null>(null);
@@ -95,11 +93,50 @@ export default function AMFlow({ day }: { day: Day }) {
         const j = await res.json().catch(() => ({}));
         throw new Error(j.error || "Couldn't save your morning.");
       }
-      router.push(`/day/${day.day}/pm`);
+      setDone(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (e) {
       setError(e instanceof Error ? e.message : "Something went wrong.");
       setSaving(false);
     }
+  }
+
+  if (done) {
+    return (
+      <>
+        <TopBar pill={`Day ${day.day} · ${day.mindset}`} progress={100} accent="am" />
+        <div className="wrap">
+          <div className="done">
+            <div style={{ fontSize: 48, marginBottom: 12 }}>☀️</div>
+            <h3>Morning Complete</h3>
+            <p>
+              Your {day.mindset} training is locked in. Come back tonight for
+              your PM workout to close out Day {day.day}.
+            </p>
+            <p
+              style={{
+                color: "var(--lime)",
+                marginTop: 10,
+                fontFamily: '"Archivo", sans-serif',
+                fontWeight: 700,
+              }}
+            >
+              See you tonight →
+            </p>
+            <button
+              className="btn btn-lime btn-block"
+              style={{ marginTop: 22 }}
+              onClick={() => window.close()}
+            >
+              Close Window
+            </button>
+          </div>
+          <div className="foot">
+            The AEA Institute · Happiness Activation Bootcamp · ABM 3.0
+          </div>
+        </div>
+      </>
+    );
   }
 
   return (
