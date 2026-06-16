@@ -141,20 +141,16 @@ export default function PMFlow({ day }: { day: Day }) {
                   {7 - day.day} day{7 - day.day === 1 ? "" : "s"} to your new
                   baseline →
                 </p>
-                <Link
-                  href={`/day/${result.advancedTo}/am`}
+                <p style={{ marginTop: 8, fontSize: 14, color: "var(--muted)" }}>
+                  Come back tomorrow for Day {result.advancedTo} via your Kajabi lesson.
+                </p>
+                <button
                   className="btn btn-lime btn-block"
                   style={{ marginTop: 22 }}
+                  onClick={() => window.close()}
                 >
-                  Start Day {result.advancedTo} →
-                </Link>
-                <Link
-                  href="/me"
-                  className="btn btn-ghost btn-block"
-                  style={{ marginTop: 12 }}
-                >
-                  Back to my progress
-                </Link>
+                  Close Window
+                </button>
               </>
             )}
           </div>
