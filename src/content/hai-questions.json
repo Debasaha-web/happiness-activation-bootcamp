@@ -1,0 +1,181 @@
+{
+  "sections": [
+    {
+      "id": 1,
+      "title": "Baseline Wellbeing",
+      "range": "10–50",
+      "questions": [
+        {
+          "id": 1,
+          "text": "In general, I feel satisfied with my life.",
+          "low": "Not at all true",
+          "high": "Completely true"
+        },
+        {
+          "id": 2,
+          "text": "I feel a sense of meaning and purpose in what I do each day.",
+          "low": "Strongly disagree",
+          "high": "Strongly agree"
+        },
+        {
+          "id": 3,
+          "text": "How often do you feel genuinely joyful or \"in good spirits\"?",
+          "low": "Rarely or never",
+          "high": "Almost every day"
+        },
+        {
+          "id": 4,
+          "text": "I feel connected to the people I care about.",
+          "low": "Not at all",
+          "high": "Very much so"
+        },
+        {
+          "id": 5,
+          "text": "When something goes wrong, I'm usually able to bounce back fairly quickly.",
+          "low": "Not like me at all",
+          "high": "Very much like me"
+        },
+        {
+          "id": 6,
+          "text": "I feel engaged and energized by the things I do in a typical week.",
+          "low": "Rarely",
+          "high": "Most of the time"
+        },
+        {
+          "id": 7,
+          "text": "How often do you feel calm and at ease rather than anxious or overwhelmed?",
+          "low": "Rarely",
+          "high": "Almost every day"
+        },
+        {
+          "id": 8,
+          "text": "I feel a sense of accomplishment from things I've done recently.",
+          "low": "Strongly disagree",
+          "high": "Strongly agree"
+        },
+        {
+          "id": 9,
+          "text": "On a typical week, how much of it actually feels good to you?",
+          "low": "Almost none of it",
+          "high": "Most of it"
+        },
+        {
+          "id": 10,
+          "text": "Overall, if 1 is \"really struggling\" and 5 is \"truly thriving,\" where would you put yourself right now?",
+          "low": "Really struggling",
+          "high": "Truly thriving"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Mindset Agency",
+      "range": "10–50",
+      "questions": [
+        {
+          "id": 11,
+          "text": "I believe I can actively train my mind to be happier — it's a skill, not just luck.",
+          "low": "Strongly disagree",
+          "high": "Strongly agree"
+        },
+        {
+          "id": 12,
+          "text": "When a negative thought shows up, I'm able to reframe it into something more useful.",
+          "low": "Almost never",
+          "high": "Almost always"
+        },
+        {
+          "id": 13,
+          "text": "I have a daily routine or practice that strengthens my mindset.",
+          "low": "Not at all",
+          "high": "Very consistently"
+        },
+        {
+          "id": 14,
+          "text": "I understand how my brain forms habits and can use that to my advantage.",
+          "low": "Not at all",
+          "high": "Very well"
+        },
+        {
+          "id": 15,
+          "text": "I notice my self-talk and can shift it when it turns against me.",
+          "low": "Rarely",
+          "high": "Almost always"
+        },
+        {
+          "id": 16,
+          "text": "I take deliberate action to improve my mood rather than waiting for it to pass.",
+          "low": "Rarely",
+          "high": "Almost always"
+        },
+        {
+          "id": 17,
+          "text": "I can stay focused on what matters even when I'm under pressure.",
+          "low": "Rarely",
+          "high": "Almost always"
+        },
+        {
+          "id": 18,
+          "text": "I believe my effort directly shapes how my life turns out.",
+          "low": "Strongly disagree",
+          "high": "Strongly agree"
+        },
+        {
+          "id": 19,
+          "text": "When I set an intention for the day, I'm able to follow through on it.",
+          "low": "Rarely",
+          "high": "Almost always"
+        },
+        {
+          "id": 20,
+          "text": "I treat setbacks as information I can learn from, not as proof of failure.",
+          "low": "Rarely",
+          "high": "Almost always"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Perspective, Mission & Gratitude",
+      "range": "5–25",
+      "questions": [
+        {
+          "id": 21,
+          "text": "I regularly notice and appreciate the good things in my life.",
+          "low": "Rarely",
+          "high": "Almost every day"
+        },
+        {
+          "id": 22,
+          "text": "I have a clear sense of what I'm working toward and why it matters.",
+          "low": "Not at all",
+          "high": "Very clear"
+        },
+        {
+          "id": 23,
+          "text": "When things get hard, I can zoom out and keep the bigger picture in view.",
+          "low": "Rarely",
+          "high": "Almost always"
+        },
+        {
+          "id": 24,
+          "text": "I feel my daily actions are connected to something larger than myself.",
+          "low": "Strongly disagree",
+          "high": "Strongly agree"
+        },
+        {
+          "id": 25,
+          "text": "I wake up with a sense of optimism about the day ahead.",
+          "low": "Rarely",
+          "high": "Almost every day"
+        }
+      ]
+    }
+  ],
+  "tiers": [
+    { "label": "Reactive",  "min": 25,  "max": 50,  "description": "Happiness happens to you." },
+    { "label": "Aware",     "min": 51,  "max": 80,  "description": "You see the levers but don't pull them yet." },
+    { "label": "Activated", "min": 81,  "max": 105, "description": "You're using the methodology in real life." },
+    { "label": "Mastery",   "min": 106, "max": 125, "description": "You've made it your operating system." }
+  ]
+}
