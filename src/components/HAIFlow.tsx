@@ -308,7 +308,7 @@ export default function HAIFlow({ phase }: { phase: Phase }) {
 
         <button
           className="btn btn-lime btn-block"
-          onClick={() => window.close()}
+          onClick={() => { if (document.referrer) { window.location.href = document.referrer; } else { window.close(); } }}
         >
           Close Window
         </button>
