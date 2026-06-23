@@ -126,7 +126,7 @@ export default function AMFlow({ day }: { day: Day }) {
             <button
               className="btn btn-lime btn-block"
               style={{ marginTop: 22 }}
-              onClick={() => window.close()}
+              onClick={() => { if (document.referrer) { window.location.href = document.referrer; } else { window.close(); } }}
             >
               Close Window
             </button>
