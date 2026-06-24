@@ -130,6 +130,9 @@ export default function AMFlow({ day }: { day: Day }) {
             >
               Close Window
             </button>
+            <p style={{ fontSize: 12, color: "var(--muted)", textAlign: "center", marginTop: 12 }}>
+              On iPhone, close this tab manually to return to your course.
+            </p>
           </div>
           <div className="foot">
             The AEA Institute · Happiness Activation Bootcamp · ABM 3.0
